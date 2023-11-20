@@ -1,36 +1,92 @@
 <!DOCTYPE html>
 <html lang="pl">
 
-<head>
+  <head>
 
-	<meta charset="utf-8">
-	<title>4 - Instrukcja warunkowa w JavaScript</title>
-	<link href="arkusz-cwiczenia.css" rel="stylesheet">
-	
-</head>
+    <meta charset="utf-8">
+    <title>4 - Instrukcja warunkowa w JavaScript</title>
+    <link href="arkusz-cwiczenia.css" rel="stylesheet">
 
-<body>
+  </head>
 
-	<label> a = <input type="number" id="a"> </label>
-	<label> b = <input type="number" id="b"> </label>
-	<label> c = <input type="number" id="c"> </label>
+  <body>
 
-	<input type="submit" value="Informacje o liczbach" onclick="matematyka()">
+    <label> a = <input type="number" id="a"> </label>
+    <label> b = <input type="number" id="b"> </label>
+    <label> c = <input type="number" id="c"> </label>
 
-	<div id="wynik"></div>
-	
-	<script>
-	
-		function matematyka()
-		{
-			var a = document.getElementById('a').value;
-			var b = document.getElementById('b').value;
-			var c = document.getElementById('c').value;
-			
-			
-		}
+    <input type="submit" value="Informacje o liczbach" onclick="matematyka()">
 
-	</script>
+    <div id="wynik"></div>
 
-</body>
+    <script>
+      function matematyka() {
+        napis1 = "<p>a) "
+        napis2 = "<p>b) "
+        napis3 = "<p>c) "
+        napis4 = "<p>d) "
+        var a = document.getElementById("a").value;
+        var b = document.getElementById("b").value;
+        var c = document.getElementById("c").value;
+
+        a = parseInt(a);
+        b = parseInt(b);
+        c = parseInt(c);
+
+        if (a < b && a < c) {
+          napis1 += "<p>" + a;
+        } else if (b < a && b < c) {
+          napis1 += "<p>" + b;
+        } else {
+          napis1 += "<p>" + c;
+        }
+
+        if (a >= b && a >= c) {
+          napis2 += "<p>" + a;
+        } else if (b >= a && b >= c) {
+          napis2 += "<p>" + b;
+        } else {
+          napis2 += "<p>" + c;
+        }
+
+        if (a < 0) {
+          a1 = a * -1;
+        } else {
+          a1 = a
+        }
+        if (b < 0) {
+          b1 = b * -1;
+        } else {
+          b1 = b
+        }
+        if (c < 0) {
+          c1 = c * -1;
+        } else {
+          c1 = c
+        }
+        napis3 += "<p>" + "a = " + a1 + "<p>" + "b = " + b1 + "<p>" + "c = " + c1;
+
+        if (a % 2 == 0) {
+          napis4 += "<p>" + "liczba a jest parzysta";
+        } else {
+          napis4 += "<p>" + "liczba a nie jest parzysta"
+        }
+        if (b % 2 == 0) {
+          napis4 += "<p>" + "liczba b jest parzysta";
+        } else {
+          napis4 += "<p>" + "liczba b nie jest parzysta"
+        }
+        if (c % 2 == 0) {
+          napis4 += "<p>" + "liczba c jest parzysta";
+        } else {
+          napis4 += "<p>" + "liczba c nie jest parzysta"
+        }
+
+        document.getElementById("wynik").innerHTML = napis1 + napis2 + napis3 + napis4;
+      }
+
+    </script>
+
+  </body>
+
 </html>
