@@ -1,31 +1,47 @@
 <!DOCTYPE html>
 <html lang="pl">
 
-<head>
+  <head>
 
-	<meta charset="utf-8">
-	<title>3 - Instrukcja warunkowa w JavaScript</title>
-	<link href="arkusz-cwiczenia.css" rel="stylesheet">
-	
-</head>
+    <meta charset="utf-8">
+    <title>3 - Instrukcja warunkowa w JavaScript</title>
+    <link href="arkusz-cwiczenia.css" rell="stylesheet">
 
-<body>
+  </head>
 
-	P = ( <input type="number" id="x"> , <input type="number" id="y"> )
+  <body>
+    P = ( <input type="number" id="x"> , <input type="number" id="y"> )
 
-	<input type="submit" value="Sprawdź ćwiartkę" onclick="ktora_cwiartka()">
+    <input type="submit" value="Sprawdź ćwiartkę" onclick="ktora_cwiartka()">
 
-	<div id="wynik"></div>
-	
-	<script>
-	
-		function ktora_cwiartka()
-		{
-			
-			
-		}
+    <div id="wynik"></div>
 
-	</script>
+    <script>
+      function ktora_cwiartka() {
+        var x = document.getElementById("x").value;
+        var y = document.getElementById("y").value;
+        var napis = "";
 
-</body>
+        if (x == 15 && y == 96) {
+          napis = "Kartezjusz, a własc. René Descartes – to filozof, fizyk i matematyk francuskiego pochodzenia. Żył w XVII wieku, uznawany jest za ojca nowożytnej filozofii."
+        } else if (x == 0 && y == 0) {
+          napis = "Punkt P=(0,0) jest początkiem układu współrzędnych.";
+        } else if (x == 0 || y == 0) {
+          napis = "Punkt leży na jednej z osi układu.";
+        } else if (x > 0 && y > 0) {
+          napis = "punkt znajduje się w I ćwiartce.";
+        } else if (x < 0 && y > 0) {
+          napis = "punkt znajduje się w II ćwiartce.";
+        } else if (x < 0 && y < 0) {
+          napis = "punkt znajduje się w III ćwiartce.";
+        } else if (x > 0 && y < 0) {
+          napis = "punkt znajduje się w IV ćwiartce.";
+        }
+
+        document.getElementById("wynik").innerHTML = napis;
+      }
+
+    </script>
+  </body>
+
 </html>
